@@ -1,0 +1,17 @@
+type Query {
+    info: String!
+    feed: [Link!]!
+}
+
+type Link {
+    id: ID!
+    description: String!
+    url: String!
+}
+
+type Mutation {
+    createLink(
+        description: String!,
+        url: String!
+    ): Boolean!
+}
