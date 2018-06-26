@@ -2,14 +2,13 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { startDB, models } = require('./db')
 const resolvers = require('./graphql/resolvers')
-// const typeDefs = require('./graphql/typeDefs')
-// const resolvers = require('./graphql/resolvers')
+require('dotenv').config()
 
 const db = startDB({
-    user: process.env.USER | 'graphql',
-    pwd: process.env.PWD | 'yoga123',
-    db: process.env.DB | 'graphqlYoga',
-    url: process.env.URI | 'localhost:27017'
+    user: process.env.DB_USER,
+    pwd: process.env.DB_PWD,
+    db: process.env.MONGO_DB,
+    uri: process.env.DB_URI
 })
 
 const context = {
