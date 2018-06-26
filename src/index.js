@@ -6,10 +6,10 @@ const resolvers = require('./graphql/resolvers')
 // const resolvers = require('./graphql/resolvers')
 
 const db = startDB({
-    user: 'graphql',
-    pwd: 'yoga123',
-    db: 'graphqlYoga',
-    url: 'localhost:27017'
+    user: process.env.USER | 'graphql',
+    pwd: process.env.PWD | 'yoga123',
+    db: process.env.DB | 'graphqlYoga',
+    url: process.env.URI | 'localhost:27017'
 })
 
 const context = {
